@@ -10,21 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace tsSearch {
+namespace tsSearch
+{
     /// <summary>
-    /// Page1.xaml の相互作用ロジック
+    /// ConfigWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class Page1 : Page {
-        public Page1() {
-            //InitializeComponent();
+    public partial class ConfigWindow : Window
+    {
+        public ConfigWindow() {
+            InitializeComponent();
         }
 
-    public void Button_Click(object sender, RoutedEventArgs e) {
-        var page2 = new Page2();
-            NavigationService.Navigate(page2);
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            this.Close();
         }
     }
 }
