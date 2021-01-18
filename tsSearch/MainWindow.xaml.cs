@@ -37,6 +37,11 @@ namespace tsSearch
         }
 
         private void btConfig_Click(object sender, RoutedEventArgs e) {
+            ConfigWindow configWindow = new ConfigWindow();
+            configWindow.ShowDialog();
+        }
+
+        private void tbTitle_TextChanged(object sender, TextChangedEventArgs e) {
 
         }
     }

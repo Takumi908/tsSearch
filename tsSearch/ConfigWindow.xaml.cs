@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,14 @@ namespace tsSearch
 
         private void Button_Click(object sender, RoutedEventArgs e) {
             this.Close();
+        }
+
+        private void btGet_Click(object sender, RoutedEventArgs e) {
+            var consumerKey = "";
+            var api = new GoogleBooksAPI(consumerKey);
+
+            var books = api.GetBooks();            
+            tbapi.Text = api.Json;
         }
     }
 }

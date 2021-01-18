@@ -26,7 +26,7 @@
         <TextBlock HorizontalAlignment="Right"  Grid.Row="1"  Text="タイトル" VerticalAlignment="Center" Margin="30" FontSize="18"/>
         <TextBlock HorizontalAlignment="Right"  Grid.Row="2"  Text="著者" VerticalAlignment="Center" Margin="30" FontSize="18"/>
         <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="出版社" VerticalAlignment="Center"  Margin="30" FontSize="18"/>
-        <TextBox x:Name="tbTitle" Grid.Column="1" Grid.ColumnSpan="2"  Height="25" Margin="33" Grid.Row="1"  Width="300"/>
+        <TextBox x:Name="tbTitle" Grid.Column="1" Grid.ColumnSpan="2"  Height="25" Margin="33" Grid.Row="1"  Width="300" TextChanged="tbTitle_TextChanged"/>
         <TextBox x:Name="tbAuthor" Grid.Column="1" Grid.ColumnSpan="2"  Height="25" Margin="33" Grid.Row="2"  Width="300" />
         <ComboBox x:Name="lbPublisher" Grid.Column="1" Grid.ColumnSpan="2"  Height="25" Margin="33" Grid.Row="3"  Width="300" >
             <ComboBoxItem Content="集英社" HorizontalAlignment="Left" Width="298"/>

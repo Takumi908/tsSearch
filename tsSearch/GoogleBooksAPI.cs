@@ -40,21 +40,5 @@ namespace tsSearch
 
             return JsonConvert.DeserializeObject<Books[]>(Json);
         }
-        public IEnumerable<Books> GetBook() {
-            var parm = new Dictionary<string, string>();
-            parm["rdf:type"] = "odpt:Books";
-            parm["acl:consumerKey"] = ConsumerKey;
-
-            var url = string.Format("{0}?{1}", EndPointUrl,
-                string.Join("&", parm.Select(p => string.Format("{0}={1}", p.Key, p.Value))));
-
-            // JSON-DLを取得する
-            var client = new WebClient() {
-                Encoding = System.Text.Encoding.UTF8
-            };
-            Json = client.DownloadString(url);
-
-            return JsonConvert.DeserializeObject<Books[]>(Json);
-        }
     }
 }

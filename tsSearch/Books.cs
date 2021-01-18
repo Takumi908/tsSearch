@@ -9,22 +9,28 @@ namespace tsSearch
 {
     class Books
     {
-        [JsonProperty("context")]
-        public string Context { get; set; }
 
-        [JsonProperty("id")]   //ID
+        [JsonProperty("intitle:")]   //タイトル
+        public string Intitle { get; set; }
+
+        [JsonProperty("inpublicher:")]   //出版社
+        public string Inpublicher { get; set; }
+
+
+        [JsonProperty("inauthor")] //著者
+        public string Inauthor { get; set; }
+
+        [JsonProperty("subject")]   //出版社
+        public string Subject { get; set; }
+
+        [JsonProperty("isbn")] //isbn
+        public string Isbn { get; set; }
+
+        [JsonProperty("id")] 
         public string Id { get; set; }
 
-        [JsonProperty("title")]   //タイトル
-        public string Title { get; set; }
+        [JsonProperty("publishedDate")]
+        public string PublishedDate { get; set; }
 
-        [JsonProperty("publicher")]   //出版社
-        public string publicher { get; set; }
-
-        [JsonProperty("pageCount")]  //価格
-        public int pageCount { get; set; }
-
-        [JsonProperty("amount")]
-        public int amount { get; set; }
     }
 }
