@@ -21,7 +21,7 @@ namespace tsSearch {
         public SearchWindow() {
             InitializeComponent();
         }
-        
+
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e) {
 
@@ -33,6 +33,20 @@ namespace tsSearch {
 
         private void edButton_Click(object sender, RoutedEventArgs e) {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+            var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
+            var api = new GoogleBooksAPI(consumerKey);
+            //var list = Item.Tostring<int>
+
+            var Books = api.GetBooks();
+            //tbSearch.Text = api.Json; //そのままテキスト出力
+            //string text = string.Join(",", Items);
+
+            foreach (var item in Books.items) {
+                tbSearch.Text = ($"{item.volumeInfo.title} {string.Join(",", item.volumeInfo.authors)} {item.volumeInfo.publisher}");
+            }
         }
     }
 }

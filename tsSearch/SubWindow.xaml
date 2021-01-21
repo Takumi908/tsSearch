@@ -6,25 +6,24 @@
         xmlns:local="clr-namespace:tsSearch"
         mc:Ignorable="d"
         Title="検索結果" Height="500" Width="750"
-        ResizeMode="NoResize">
-
+        ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="15*"/>
-            <ColumnDefinition Width="15*"/>
-            <ColumnDefinition Width="15*"/>
-            <ColumnDefinition Width="15*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="15*"/>
-        </Grid.RowDefinitions>
-        <Button x:Name="rtButton" Content="戻る" Grid.Column="2" HorizontalAlignment="Left" Margin="91,53,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="rtButton_Click"/>
-        <Button x:Name="edButton" Content="終了" Grid.Column="3" HorizontalAlignment="Left" Margin="24,53,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="edButton_Click"/>
-        <TextBox x:Name="tbSesch" Height="319" Margin="10"  VerticalAlignment="Top" Width="680" Grid.ColumnSpan="4" Grid.RowSpan="3" ScrollViewer.CanContentScroll="True"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="rtButton" Content="戻る" Grid.Column="2" HorizontalAlignment="Left" Margin="91,53,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="rtButton_Click"/>
+            <Button x:Name="edButton" Content="終了" Grid.Column="3" HorizontalAlignment="Left" Margin="24,53,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="edButton_Click"/>
+            <TextBox x:Name="tbSearch" Grid.ColumnSpan="4" Grid.RowSpan="3" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Margin="10"/>
         <RadioButton x:Name="rdoHorizontal" Content="水平スクロールバー" HorizontalAlignment="Left" Margin="63,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdoVertical" Content="垂直スクロールバー" HorizontalAlignment="Left" Margin="63,30,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-    </Grid>
+        <RadioButton x:Name="rdoVertical" Content="垂直スクロールバー" HorizontalAlignment="Left" Margin="63,30,0,0" Grid.Row="3" VerticalAlignment="Top" />
+        </Grid>
 </Window>

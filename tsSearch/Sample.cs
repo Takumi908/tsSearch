@@ -42,5 +42,14 @@ namespace tsSearch
                    var httpResponse = await client.PostAsync("https://www.googleapis.com/books/v1/volumes?q=search+", content);
                    //AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY APIキー
          */
+
+        //タイトル・作者・出版社の取得
+        // var volumeInfo = api.GetVolumeInfo();
+
+        // var q = volumeInfo.Select(r => new { r.authors, r.publisher, r.title });
+        // tbSearch.Items.Add(q);
+        if(item.volumeInfo.publisher == null){{item.volumeInfo.publisher
+    }
+}else{Console.Write("出版社不明");
     }
 }

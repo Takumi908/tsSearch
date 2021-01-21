@@ -33,7 +33,7 @@ namespace tsSearch
             var api = new GoogleBooksAPI(consumerKey);
 
             var books = api.GetBooks();            
-            tbapi.Text = api.Json;
+            tbapi.Text = api.Json; //そのまま出力(エンコードしただけ）
         }
     }
 }
