@@ -34,6 +34,8 @@ namespace tsSearch
         private void btSearch_Click(object sender, RoutedEventArgs e) {
             SearchWindow searchWindow = new SearchWindow();
             searchWindow.ShowDialog();
+            Books. =  tbTitle.Text
+            
         }
 
         private void btConfig_Click(object sender, RoutedEventArgs e) {

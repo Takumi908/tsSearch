@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,15 +38,23 @@ namespace tsSearch {
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
-            var api = new GoogleBooksAPI(consumerKey);
-            //var list = Item.Tostring<int>
-
+            var api = new GoogleBooksAPI(consumerKey);         
             var Books = api.GetBooks();
-            //tbSearch.Text = api.Json; //そのままテキスト出力
-            //string text = string.Join(",", Items);
 
+
+            //出力
             foreach (var item in Books.items) {
-                tbSearch.Text = ($"{item.volumeInfo.title} {string.Join(",", item.volumeInfo.authors)} {item.volumeInfo.publisher}");
+                //タイトル
+                tbSearch.Text += ($"{item.volumeInfo.title} ");
+                //作者
+                if (item.volumeInfo.authors != null) {
+                    tbSearch.Text += ($"{string.Join(",", item.volumeInfo.authors)} ");
+                } else {
+                    Console.Write("作者無し");
+                }
+                //出版社
+                tbSearch.Text += ($"{item.volumeInfo.publisher}") +"\n";
+                
             }
         }
     }

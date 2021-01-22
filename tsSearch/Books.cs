@@ -9,6 +9,14 @@ namespace tsSearch
 {
     class Books
     {
+        //メインウィンドウの検索項目
+        public class Boxdate
+        {
+          public string sctitle { get; set; }
+          public string scauthor { get; set; }
+          public string scpubliher { get; set; }
+        }
+
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
         public class ReadingModes
         {

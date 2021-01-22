@@ -41,7 +41,7 @@ namespace tsSearch
 
                    var httpResponse = await client.PostAsync("https://www.googleapis.com/books/v1/volumes?q=search+", content);
                    //AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY APIキー
-         */
+         
 
         //タイトル・作者・出版社の取得
         // var volumeInfo = api.GetVolumeInfo();
@@ -51,5 +51,18 @@ namespace tsSearch
         if(item.volumeInfo.publisher == null){{item.volumeInfo.publisher
     }
 }else{Console.Write("出版社不明");
-    }
+*/
+////                foreach (var item in Books.items) {
+////                //タイトル
+////                tbSearch.Text += ($"{item.volumeInfo.title} ");
+////                //作者
+////                if (item.volumeInfo.authors != null) {
+////                    tbSearch.Text += ($"{string.Join(",", item.volumeInfo.authors)} ");
+////                } else {
+////                    Console.Write("作者無し");
+////                }
+////                //出版社
+////                tbSearch.Text += ($"{item.volumeInfo.publisher}") +"\n";
+////            }
+}
 }

@@ -20,7 +20,9 @@ namespace tsSearch
 
         public GoogleBooksAPI(string consumerKey) {
             ConsumerKey = consumerKey;
-            EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=search";  
+            EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=time&printType=books&maxResults=10&key";
+            //EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=time&printType=books+&key";
+            // EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=search";
 
 
         }
