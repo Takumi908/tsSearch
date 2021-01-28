@@ -37,8 +37,12 @@ namespace tsSearch {
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
-            var api = new GoogleBooksAPI(consumerKey);         
+
+          
+           var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
+            var api = new GoogleBooksAPI(consumerKey);
+            //GoogleBooksAPI.EndPointUrl += ($"+title={MainWindow.sctitle}");
+            GoogleBooksAPI.EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=search+title={MainWindow.sctitle}+author={MainWindow.scauthor}=time&printType=books&country=JP&langRestrict=ja&maxResults=40&key");
             var Books = api.GetBooks();
 
 

@@ -14,7 +14,7 @@ namespace tsSearch
     class GoogleBooksAPI {
         public string ConsumerKey { get; private set; }
 
-        public string EndPointUrl { get; private set; }
+        public static string EndPointUrl { get; set; }
 
         public string Json { get; private set; }
 
