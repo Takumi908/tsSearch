@@ -28,16 +28,21 @@ namespace tsSearch
             InitializeComponent();
 
         }
+        public static string sctitle;
+        public static string scauthor;
+        public static string scpublisher;
 
-
-
+        //検索ボタン押したときに実行
         private void btSearch_Click(object sender, RoutedEventArgs e) {
+            sctitle = tbTitle.Text;
+            scauthor = tbAuthor.Text;
+            scpublisher = lbPublisher.Text;
             SearchWindow searchWindow = new SearchWindow();
             searchWindow.ShowDialog();
-            Books. =  tbTitle.Text
-            
-        }
+            // Books.Boxdate
 
+        }
+        //設定
         private void btConfig_Click(object sender, RoutedEventArgs e) {
             ConfigWindow configWindow = new ConfigWindow();
             configWindow.ShowDialog();

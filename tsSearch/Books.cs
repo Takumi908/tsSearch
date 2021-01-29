@@ -9,14 +9,6 @@ namespace tsSearch
 {
     class Books
     {
-        //メインウィンドウの検索項目
-        public class Boxdate
-        {
-          public string sctitle { get; set; }
-          public string scauthor { get; set; }
-          public string scpubliher { get; set; }
-        }
-
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
         public class ReadingModes
         {
@@ -63,7 +55,7 @@ namespace tsSearch
             public string infoLink { get; set; }
             public string canonicalVolumeLink { get; set; }
             public List<IndustryIdentifier> industryIdentifiers { get; set; }
-            public int? averageRating { get; set; }
+            //  public int? averageRating { get; set; }
             public int? ratingsCount { get; set; }
             public string subtitle { get; set; }
         }
