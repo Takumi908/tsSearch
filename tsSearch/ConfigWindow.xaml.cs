@@ -23,17 +23,16 @@ namespace tsSearch
         public ConfigWindow() {
             InitializeComponent();
         }
-
+        //閉じる
         private void Button_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
-
+        //取得
         private void btGet_Click(object sender, RoutedEventArgs e) {
             var consumerKey = "";
-            var api = new GoogleBooksAPI(consumerKey);
-
-            var books = api.GetBooks();            
-            tbapi.Text = api.Json; //そのまま出力(エンコードしただけ）
+            GoogleBooksAPI.EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=search";
+            var api = new GoogleBooksAPI(consumerKey); 
+            var books = api.GetBooks(); //そのまま出力(エンコードしただけ）
         }
     }
 }

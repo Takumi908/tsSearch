@@ -11,10 +11,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.MessageBox;
 
 namespace tsSearch
 {
@@ -31,25 +33,26 @@ namespace tsSearch
         public static string sctitle;
         public static string scauthor;
         public static string scpublisher;
+                                                
 
-            //検索ボタン押したときに実行
+        //検索ボタン押したときに実行
         private void btSearch_Click(object sender, RoutedEventArgs e) {
-             sctitle = tbTitle.Text;
-             scauthor = tbAuthor.Text;
-             scpublisher = lbPublisher.Text;
-            SearchWindow searchWindow = new SearchWindow();
-            searchWindow.ShowDialog();
-           // Books.Boxdate
-            
-        }
-            //設定
-            private void btConfig_Click(object sender, RoutedEventArgs e) {
-                ConfigWindow configWindow = new ConfigWindow();
-                configWindow.ShowDialog();
+            //値がすべて空の場合エラーボックスを表示
+            sctitle = tbTitle.Text;
+            scauthor = tbAuthor.Text;
+            scpublisher = lbPublisher.Text;
+            if (sctitle == "" && scauthor == "" && scpublisher == "") {
+                MessageBox.Show("値が空です");
+            } else {
+                SearchWindow searchWindow = new SearchWindow();
+                searchWindow.ShowDialog();
             }
-         
-        private void tbTitle_TextChanged(object sender, TextChangedEventArgs e) {
+        }
+        //設定
+        private void btConfig_Click(object sender, RoutedEventArgs e) {
 
+            ConfigWindow configWindow = new ConfigWindow();
+            configWindow.ShowDialog();
         }
     }
 }
