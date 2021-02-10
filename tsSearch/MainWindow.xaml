@@ -10,7 +10,7 @@
         ResizeMode="NoResize">
 
 
-    
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="image5.jpg"/>
@@ -30,12 +30,12 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Right" Text="タイトル" Grid.Row="1" VerticalAlignment="Center" Margin="30" FontSize="25" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <TextBlock HorizontalAlignment="Right"  Grid.Row="2"  Text="著者" VerticalAlignment="Center" Margin="30" FontSize="25" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="出版社" VerticalAlignment="Center"  Margin="30" FontSize="25" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <TextBox x:Name="tbTitle"  Grid.Column="1" Grid.ColumnSpan="2" Margin="27,30,10,30" Grid.Row="1" />
+        <TextBlock HorizontalAlignment="Right"  Grid.Row="1"  Text="タイトル" VerticalAlignment="Center" Margin="30" FontSize="25" Foreground="#FF1F8D5B"/>
+        <TextBlock HorizontalAlignment="Right"  Grid.Row="2"  Text="著者" VerticalAlignment="Center" Margin="30" FontSize="25" Foreground="#FF1F8D5B"/>
+        <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="出版社" VerticalAlignment="Center"  Margin="30" FontSize="25" Foreground="#FF127A4A"/>
+        <TextBox x:Name="tbTitle"  Grid.Column="1" Grid.ColumnSpan="2" Margin="27,30,10,30" Grid.Row="1" FontSize="25" Foreground="Black" />
 
-        <TextBox x:Name="tbAuthor" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,31,12,31" Grid.Row="2"
+        <TextBox x:Name="tbAuthor" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,31,12,31" Grid.Row="2" FontSize="25"
                  Text="{Binding Text}">
             <TextBox.RenderTransform>
                 <TransformGroup>
@@ -46,17 +46,12 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <ComboBox x:Name="lbPublisher" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,31,10,31" Grid.Row="3" 
-                 Text="{Binding Text}">
-            <ComboBoxItem Content="" HorizontalAlignment="Left" Width="298"/>
-            <ComboBoxItem Content="集英社" HorizontalAlignment="Left" Width="298"/>
-            <ComboBoxItem Content="講談社" HorizontalAlignment="Left" Width="298"/>
-            <ComboBoxItem Content="小学館" HorizontalAlignment="Left" Width="298"/>
-            <ComboBoxItem Content="双葉社" HorizontalAlignment="Left" Width="298"/>
-        </ComboBox>
-        <Button x:Name="btSearch" Content="検索" Grid.Column="3"   Grid.Row="4" VerticalAlignment="Center" Height="40" Click="btSearch_Click" FontSize="15" Margin="40,20" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
-        <Button x:Name="btConfig" Content="ヘルプ" HorizontalAlignment="Left" Margin="81,21,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Click="btConfig_Click" FontSize="15" Height="40" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-        <Label Content="本検索システム" FontSize="30"  Margin="184,31,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Width="374"/>
+        <TextBox x:Name="tbPublisher" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,31,12,31" Grid.Row="3" FontSize="25">
+        </TextBox>
+        <Button x:Name="btSearch" Content="検索" Grid.Column="3"   Grid.Row="4" VerticalAlignment="Center" Height="40" Click="btSearch_Click" FontSize="20" Margin="30,25" Width="100" Background="#FFF09797" Foreground="White"   />
+        <Button x:Name="btConfig" Content="ヘルプ" Grid.Row="4" VerticalAlignment="Center" Width="100" Click="btConfig_Click" FontSize="20" Height="40" Background="#FFF09797" Foreground="White" />
+        <Label Content="本検索システム" FontSize="30"  Margin="184,31,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Width="374" Foreground="#FFFF6767"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="78,44,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 
 </Window>

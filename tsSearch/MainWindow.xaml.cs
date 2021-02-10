@@ -28,7 +28,6 @@ namespace tsSearch
 
         public MainWindow() {
             InitializeComponent();
-
         }
         public static string sctitle;
         public static string scauthor;
@@ -40,7 +39,7 @@ namespace tsSearch
             //値がすべて空の場合エラーボックスを表示
             sctitle = tbTitle.Text;
             scauthor = tbAuthor.Text;
-            scpublisher = lbPublisher.Text;
+            scpublisher = tbPublisher.Text;
             if (sctitle == "" && scauthor == "" && scpublisher == "") {
                 MessageBox.Show("値が空です");
             } else {
@@ -50,9 +49,13 @@ namespace tsSearch
         }
         //設定
         private void btConfig_Click(object sender, RoutedEventArgs e) {
-
             ConfigWindow configWindow = new ConfigWindow();
             configWindow.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            DataWindow dataWindow = new DataWindow();
+            dataWindow.ShowDialog();
         }
     }
 }

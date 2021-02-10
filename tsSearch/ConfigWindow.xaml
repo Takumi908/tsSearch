@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tsSearch"
         mc:Ignorable="d"
-        Title="ConfigWindow" Height="600" Width="800">
+        Title="ヘルプ" Height="400" Width="550" ResizeMode="NoResize" >
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image5.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="30*"/>
@@ -21,9 +24,8 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="tbapi"  Grid.ColumnSpan="4" Grid.RowSpan="5" ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10"/>
-        <Button x:Name="btGet" Content="取得" Width="100" Height="30" Click="btGet_Click" Grid.Row="6" Grid.Column="0" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button x:Name="btEnd" Content="終了" Width="100" Height="30" Click="Button_Click"  Grid.Row="6" Grid.Column="3" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbhelp"  Grid.ColumnSpan="4" Grid.RowSpan="5" ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10"/>
+        <Button x:Name="btEnd" Content="閉じる" Click="Button_Click"  Grid.Row="5" Grid.Column="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,15,23,15" Width="90" Foreground="#FFFF8080" Background="#FF5AD3EE"/>
 
     </Grid>
 </Window>

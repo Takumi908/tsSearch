@@ -40,6 +40,7 @@ namespace tsSearch
             this.Close();
         }
 
+
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
             var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
@@ -61,26 +62,29 @@ namespace tsSearch
                 if (checknumber == 0) {
                     // 入力ボックスの著者が空ではなく取得先の著者がnullではない場合ture
                     if (MainWindow.scauthor != "" && item.volumeInfo.authors != null) {
-                        //著者が一致した書籍を取得  
-                        foreach (string i in item.volumeInfo.authors) {
-                            if (MainWindow.scauthor == i) {
+                        //入力欄が著者のみの場合出力
+                        if ( MainWindow.sctitle == "" && MainWindow.scpublisher == "") {
+                            //著者が一致した書籍を取得  
+                            foreach (string i in item.volumeInfo.authors) {
+                                if (MainWindow.scauthor == i) {
 
-                                //タイトル
-                                tbSearch.Text += ($"{item.volumeInfo.title}  ");
+                                    //タイトル
+                                    tbSearch.Text += ($"{item.volumeInfo.title}  ");
 
-                                //作者
-                                if (item.volumeInfo.authors != null) {
-                                    tbSearch.Text += ($"{string.Join(",", item.volumeInfo.authors)}  ");
+                                    //作者
+                                    if (item.volumeInfo.authors != null) {
+                                        tbSearch.Text += ($"{string.Join(",", item.volumeInfo.authors)}  ");
+                                    }
+
+                                    //出版社                                    
+                                    if (item.volumeInfo.publisher != null) {
+
+                                        tbSearch.Text += ($"{item.volumeInfo.publisher} \n");
+                                    } else {
+                                        tbSearch.Text += ($" 出版社不明 \n");
+                                    }
+                                    checknumber = 1;
                                 }
-
-                                //出版社                                    
-                                if (item.volumeInfo.publisher != null) {
-
-                                    tbSearch.Text += ($"{item.volumeInfo.publisher} \n");
-                                } else {
-                                    tbSearch.Text += ($" 出版社不明 \n");
-                                }
-                                checknumber = 1;
                             }
                         }
                     }
@@ -89,7 +93,6 @@ namespace tsSearch
                     // タイトルが空ではない場合
                     if (MainWindow.sctitle != "") {
                         //タイトルが含まれている書籍を取得  
-                        //   if (MainWindow.sctitle == item.volumeInfo.title) {
                         if (item.volumeInfo.title.Contains(MainWindow.sctitle)) {
 
                             //タイトル
@@ -114,6 +117,25 @@ namespace tsSearch
                 if (checknumber == 0) {
                     // 出版社が空ではない場合
                     if (MainWindow.scpublisher != "") {
+                        //出版社と著者が入力されてる場合
+                        if (MainWindow.scpublisher != "" && MainWindow.scauthor != "" && item.volumeInfo.authors != null) {
+                            //著者と出版社が一致した書籍を取得  
+                            if (MainWindow.scpublisher == item.volumeInfo.publisher && MainWindow.scauthor == item.volumeInfo.title) {
+
+                                //タイトル
+                                tbSearch.Text += ($"{item.volumeInfo.title}  ");
+
+                                //作者
+                                if (item.volumeInfo.authors != null) {
+                                    tbSearch.Text += ($"{string.Join(",", item.volumeInfo.authors)}  ");
+                                }
+
+                                //出版社                                    
+                                    tbSearch.Text += ($"{item.volumeInfo.publisher} \n");
+                                    checknumber = 1;
+                            }
+                        }
+                    } else {
                         //出版社が一致した書籍を取得  
                         if (MainWindow.scpublisher == item.volumeInfo.publisher) {
 
@@ -129,8 +151,6 @@ namespace tsSearch
                             if (item.volumeInfo.publisher != null) {
 
                                 tbSearch.Text += ($"{item.volumeInfo.publisher} \n");
-                            } else {
-                                tbSearch.Text += ($" 出版社不明 \n");
                             }
                             checknumber = 1;
                         }
@@ -139,11 +159,15 @@ namespace tsSearch
                 //numberリセット
                 checknumber = 0;
             }
-            //書籍が見つからなかった時戻る
-            if (tbSearch.Text == "") {
-                MessageBox.Show("該当する書籍が見つかりませんでした");
-                this.Close();
+                //書籍が見つからなかった時戻る
+                if (tbSearch.Text == "") {
+                    MessageBox.Show("該当する書籍が見つかりませんでした");
+                    this.Close();              
             }
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e) {
+
         }
     }
 }
