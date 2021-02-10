@@ -54,6 +54,9 @@ namespace tsSearch
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
+            sctitle = tbTitle.Text;
+            scauthor = tbAuthor.Text;
+            scpublisher = tbPublisher.Text;
             DataWindow dataWindow = new DataWindow();
             dataWindow.ShowDialog();
         }

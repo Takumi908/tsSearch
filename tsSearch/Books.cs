@@ -42,7 +42,7 @@ namespace tsSearch
             public string publishedDate { get; set; }
             public string description { get; set; }
             public ReadingModes readingModes { get; set; }
-            public int pageCount { get; set; }
+            public int pageCount { get; set; }                      
             public string printType { get; set; }
             public List<string> categories { get; set; }
             public string maturityRating { get; set; }

@@ -27,10 +27,8 @@ namespace tsSearch
         public DataWindow() {
             InitializeComponent();
 
-            DataList dataList = new DataList();
-            listView.DataContext = dataList.Data;
+            
         }
-
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e) {
 
@@ -46,7 +44,8 @@ namespace tsSearch
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            
+            DataList dataList = new DataList();
+            dataList.List();
         }
     }
 }
