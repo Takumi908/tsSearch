@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tsSearch
 {
-  public  class data
+  public  class Data
     {     
         public string Title { get; set; }
 
@@ -15,8 +15,8 @@ namespace tsSearch
 
         public string Publisher { get; set;}
 
-        public int Isbn { get; set; }
+        public String Isbn { get; set; }
 
-        public Url BookUrl { get; set; }
+        public string BookUrl { get; set; }
     }                           
 }

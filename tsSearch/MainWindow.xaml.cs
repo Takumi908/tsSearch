@@ -36,29 +36,22 @@ namespace tsSearch
 
         //検索ボタン押したときに実行
         private void btSearch_Click(object sender, RoutedEventArgs e) {
-            //値がすべて空の場合エラーボックスを表示
+
             sctitle = tbTitle.Text;
             scauthor = tbAuthor.Text;
             scpublisher = tbPublisher.Text;
+            //値がすべて空の場合エラーボックスを表示
             if (sctitle == "" && scauthor == "" && scpublisher == "") {
                 MessageBox.Show("値が空です");
             } else {
-                SearchWindow searchWindow = new SearchWindow();
-                searchWindow.ShowDialog();
+                DataWindow dataWindow = new DataWindow();
+                dataWindow.ShowDialog();
             }
         }
         //設定
         private void btConfig_Click(object sender, RoutedEventArgs e) {
             ConfigWindow configWindow = new ConfigWindow();
             configWindow.ShowDialog();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            sctitle = tbTitle.Text;
-            scauthor = tbAuthor.Text;
-            scpublisher = tbPublisher.Text;
-            DataWindow dataWindow = new DataWindow();
-            dataWindow.ShowDialog();
         }
     }
 }

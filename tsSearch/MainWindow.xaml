@@ -51,7 +51,7 @@
         <Button x:Name="btSearch" Content="検索" Grid.Column="3"   Grid.Row="4" VerticalAlignment="Center" Height="40" Click="btSearch_Click" FontSize="20" Margin="30,25" Width="100" Background="#FFF09797" Foreground="White"   />
         <Button x:Name="btConfig" Content="ヘルプ" Grid.Row="4" VerticalAlignment="Center" Width="100" Click="btConfig_Click" FontSize="20" Height="40" Background="#FFF09797" Foreground="White" />
         <Label Content="本検索システム" FontSize="30"  Margin="184,31,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Width="374" Foreground="#FFFF6767"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="78,44,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        
     </Grid>
 
 </Window>

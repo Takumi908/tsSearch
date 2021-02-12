@@ -22,7 +22,6 @@ namespace tsSearch
         public GoogleBooksAPI(string consumerKey) {
             ConsumerKey = consumerKey;
             EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=search+author={MainWindow.scauthor}+title={MainWindow.sctitle}+publisher={MainWindow.scpublisher}&country=JP&langRestrict=ja&maxResults=40&key");
-            //EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=time&printType=books&country=JP&langRestrict=ja&maxResults=40&key";
             //現在の検索条件:40件の結果を返す(10～40で変更可能)
              
         }

@@ -75,7 +75,7 @@
     <Compile Include="ConfigWindow.xaml.cs">
       <DependentUpon>ConfigWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="data.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="DataList.cs" />
     <Compile Include="GoogleBooksAPI.cs" />
     <Compile Include="Sample.cs" />

@@ -65,5 +65,89 @@ namespace tsSearch
         ////                tbSearch.Text += ($"{item.volumeInfo.publisher}") +"\n";
         ////            }
         ///
+
+        /*
+         *       //著者が空ではない場合実行
+                    if (item.volumeInfo.authors != null) {
+                        //リストの著者をauに入れている
+                        foreach (string au in item.volumeInfo.authors) {
+                            //numberが０のときに実行
+                            if (checknumber == 0) {
+                                //著者のみが入力されている場合実行
+                                if (MainWindow.sctitle == "" && MainWindow.scauthor != "" && MainWindow.scpublisher == "") {
+                                    //著者が一致したものを取得                             
+                                    if (MainWindow.scauthor == au) {
+                                        Url.Add(item.volumeInfo.infoLink);
+                                        datas.Add(new Data() {
+                                            Title = item.volumeInfo.title,
+                                            Author = string.Join(",", item.volumeInfo.authors),
+                                            Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                            Isbn = i.identifier,
+                                        });
+                                    }
+                                }
+                                checknumber = 1;
+                            } else {
+                                Url.Add(item.volumeInfo.infoLink);
+                                datas.Add(new Data() {
+                                    Title = item.volumeInfo.title,
+                                    Author = string.Join(",", item.volumeInfo.authors),
+                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                    Isbn = i.identifier
+                                });
+                            }
+
+                                if (checknumber == 0) {
+                                //タイトルのみが入力されてる場合
+                                if (MainWindow.sctitle != "" && MainWindow.scauthor == "" && MainWindow.scpublisher == "") {
+                                    //タイトルが含まれている書籍を取得  
+                                    if (item.volumeInfo.title.Contains(MainWindow.sctitle)) {
+                                        Url.Add(item.volumeInfo.infoLink);
+                                        datas.Add(new Data() {
+                                            Title = item.volumeInfo.title,
+                                            Author = string.Join(",", item.volumeInfo.authors),
+                                            Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                            Isbn = i.identifier,
+                                        });
+                                    }
+                                } else {
+                                    Url.Add(item.volumeInfo.infoLink);
+                                    datas.Add(new Data() {
+                                        Title = item.volumeInfo.title,
+                                        Author = string.Join(",", item.volumeInfo.authors),
+                                        Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                        Isbn = i.identifier
+                                    });
+                                }
+                                checknumber = 1;
+                            }
+
+                            if (checknumber == 0) {
+                                //出版社のみが入力されてる場合
+                                if (MainWindow.sctitle == "" && MainWindow.scauthor == "" && MainWindow.scpublisher != "") {
+                                    Url.Add(item.volumeInfo.infoLink);
+                                    datas.Add(new Data() {
+                                        Title = item.volumeInfo.title,
+                                        Author = string.Join(",", item.volumeInfo.authors),
+                                        Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                        Isbn = i.identifier,
+                                    });
+                                } else {
+                                    Url.Add(item.volumeInfo.infoLink);
+                                    datas.Add(new Data() {
+                                        Title = item.volumeInfo.title,
+                                        Author = string.Join(",", item.volumeInfo.authors),
+                                        Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                        Isbn = i.identifier,
+                                    });
+                                }
+                                checknumber = 1;
+                            }
+
+                        }
+                        checknumber = 0;
+                    }
+                   
+        */
     }
 }

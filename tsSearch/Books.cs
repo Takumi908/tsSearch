@@ -58,6 +58,7 @@ namespace tsSearch
           //  public int? averageRating { get; set; }
             public int? ratingsCount { get; set; }
             public string subtitle { get; set; }
+            public string identifier { get; set; }
         }
 
         public class ListPrice
