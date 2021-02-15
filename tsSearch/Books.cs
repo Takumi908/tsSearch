@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace tsSearch
 {
     class Books
-    {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    {      
         public class ReadingModes
         {
             public bool text { get; set; }

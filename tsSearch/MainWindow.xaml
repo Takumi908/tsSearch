@@ -32,8 +32,8 @@
 
         <TextBlock HorizontalAlignment="Right"  Grid.Row="1"  Text="タイトル" VerticalAlignment="Center" Margin="30" FontSize="25" Foreground="#FF1F8D5B"/>
         <TextBlock HorizontalAlignment="Right"  Grid.Row="2"  Text="著者" VerticalAlignment="Center" Margin="30" FontSize="25" Foreground="#FF1F8D5B"/>
-        <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="出版社" VerticalAlignment="Center"  Margin="30" FontSize="25" Foreground="#FF127A4A"/>
-        <TextBox x:Name="tbTitle"  Grid.Column="1" Grid.ColumnSpan="2" Margin="27,30,10,30" Grid.Row="1" FontSize="25" Foreground="Black" />
+        <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="ISBN" VerticalAlignment="Center"  Margin="30" FontSize="25" Foreground="#FF1F8D5B"/>
+        <TextBox x:Name="tbTitle"  Grid.Column="1" Grid.ColumnSpan="2" Margin="27,30,10,30" Grid.Row="1" FontSize="25" Foreground="Black"  />
 
         <TextBox x:Name="tbAuthor" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,31,12,31" Grid.Row="2" FontSize="25"
                  Text="{Binding Text}">
@@ -50,8 +50,9 @@
         </TextBox>
         <Button x:Name="btSearch" Content="検索" Grid.Column="3"   Grid.Row="4" VerticalAlignment="Center" Height="40" Click="btSearch_Click" FontSize="20" Margin="30,25" Width="100" Background="#FFF09797" Foreground="White"   />
         <Button x:Name="btConfig" Content="ヘルプ" Grid.Row="4" VerticalAlignment="Center" Width="100" Click="btConfig_Click" FontSize="20" Height="40" Background="#FFF09797" Foreground="White" />
-        <Label Content="本検索システム" FontSize="30"  Margin="184,31,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Width="374" Foreground="#FFFF6767"/>
-        
+        <Label Content="GoogleBooks検索システム" FontSize="30"  Margin="0,10,184,34" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Width="374" Foreground="#FFFF6767" Grid.Column="1"/>
+        <Label Content="～GoogleBooksAPIを使いライブラリから本を検索～" FontSize="15" Grid.Column="1" HorizontalAlignment="Center" Margin="10,65,0,0" VerticalAlignment="Top" Height="29" Grid.ColumnSpan="2" Width="350" Foreground="#FF1F8D5B"/>
+
     </Grid>
 
 </Window>

@@ -149,5 +149,78 @@ namespace tsSearch
                     }
                    
         */
+        /*
+                                         //タイトル&著者
+                                case "110":
+                                    if (item.volumeInfo.authors != null) {
+                                        foreach (string au in item.volumeInfo.authors) {
+                                            if (item.volumeInfo.title.Contains(MainWindow.sctitle) && MainWindow.scauthor == au) {
+                                                Url.Add(item.volumeInfo.infoLink);
+                                                datas.Add(new Data()
+                                                {
+                                                    Title = item.volumeInfo.title,
+                                                    Author = string.Join(",", item.volumeInfo.authors),
+                                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                    Isbn = i.identifier,
+                                                });
+                                            }
+                                        }
+                                    }
+                                    break;
+                                //タイトル&出版社   
+                                case "101":
+                                    if (item.volumeInfo.title.Contains(MainWindow.sctitle) && MainWindow.scpublisher == item.volumeInfo.publisher) {
+                                        Url.Add(item.volumeInfo.infoLink);
+                                        datas.Add(new Data()
+                                        {
+                                            Title = item.volumeInfo.title,
+                                            Author = string.Join(",", item.volumeInfo.authors),
+                                            Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                            Isbn = i.identifier,
+                                        });
+                                    }
+
+                                    break;
+                                //著者&出版社
+                                case "011":
+                                    if (item.volumeInfo.authors != null) {
+                                        foreach (string au in item.volumeInfo.authors) {
+                                            if (MainWindow.scauthor == au && MainWindow.scpublisher == item.volumeInfo.publisher) {
+                                                Url.Add(item.volumeInfo.infoLink);
+                                                datas.Add(new Data()
+                                                {
+                                                    Title = item.volumeInfo.title,
+                                                    Author = string.Join(",", item.volumeInfo.authors),
+                                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                    Isbn = i.identifier,
+                                                });
+                                            }
+                                        }
+                                    }
+                                    break;
+                                //すべて
+                                case "111":
+                                    if (item.volumeInfo.authors != null) {
+                                        foreach (string au in item.volumeInfo.authors) {
+                                            if (item.volumeInfo.title.Contains(MainWindow.sctitle) && MainWindow.scauthor == au && MainWindow.scpublisher == item.volumeInfo.publisher) {
+                                                Url.Add(item.volumeInfo.infoLink);
+                                                datas.Add(new Data()
+                                                {
+                                                    Title = item.volumeInfo.title,
+                                                    Author = string.Join(",", item.volumeInfo.authors),
+                                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                    Isbn = i.identifier,
+                                                });
+                                            }
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    } 
+         
+         */
     }
 }

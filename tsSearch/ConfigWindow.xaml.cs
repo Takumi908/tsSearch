@@ -27,12 +27,12 @@ namespace tsSearch
         private void Button_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
-        //取得
-        private void btGet_Click(object sender, RoutedEventArgs e) {
-            var consumerKey = "";
-            GoogleBooksAPI.EndPointUrl = "https://www.googleapis.com/books/v1/volumes?q=search";
-            var api = new GoogleBooksAPI(consumerKey); 
-            var books = api.GetBooks(); //そのまま出力(エンコードしただけ）
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+            tbHelpTitle.Text = ($"*検索システムの使い方*");
+            tbhelp.Text += ($"タイトル:検索したタイトルが含まれている書籍を検索する\n著者:検索した著者と一致する書籍を検索する\nISBN:検索した13桁のコードと一致する書籍を検索する"); 
+            tbHelpTitle2.Text += ($"*本が見つからない場合*");
+            tbhelp2.Text +=($"著者の漢字やタイトルが間違っていると、\n正確に書籍を取得出来ないことがあるので注意" );
         }
     }
 }
