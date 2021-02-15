@@ -21,15 +21,28 @@ namespace tsSearch
 
         public GoogleBooksAPI(string consumerKey) {
             ConsumerKey = consumerKey;
-            EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=search+title+{MainWindow.sctitle}=author+{MainWindow.scauthor}=isbn+{MainWindow.scpublisher}&country=JP&langRestrict=ja&maxResults=40&key");
-            //現在の検索条件:40件の結果を返す(10～40で変更可能)
-           
+            // EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=search+title+{MainWindow.sctitle}=author+{MainWindow.scauthor}=isbn+{MainWindow.scpublisher}&country=JP&langRestrict=ja&maxResults=40&key");
+            EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=search&key");
+
+             //タイトルのみ
+            if (MainWindow.sctitle != "" && MainWindow.scauthor == "") {
+                EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=intitle:{MainWindow.sctitle}&country=JP&maxResults=40&key");
+            }//著者のみ
+            else if (MainWindow.scauthor != "" && MainWindow.sctitle == "") {
+                EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=inauthor:{MainWindow.scauthor}&filter=paid-ebooks&printType=books&maxResults=40&key");
+            }//タイトルと著者
+            else if (MainWindow.sctitle != "" && MainWindow.scauthor != "") {
+                EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=intitle:{MainWindow.sctitle}+inauthor:{MainWindow.scauthor}&maxResults=40&country=JP&key");
+            }//ISBN
+            if (MainWindow.sctitle == "" && MainWindow.scauthor == "" && MainWindow.scpublisher != "") {
+                EndPointUrl = ($"https://www.googleapis.com/books/v1/volumes?q=isbn+{MainWindow.scpublisher}&country=JP&key");
+            }
         }
 
         public Root GetBooks() {
             
               var parm = new Dictionary<string, string>();
-              parm["rdf:type"] = "books";
+          //    parm["rdf:type"] = "books";
               parm["acl : consumerKey"] = ConsumerKey;
              
             var url = string.Format("{0}?{1}", EndPointUrl,

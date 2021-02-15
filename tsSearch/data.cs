@@ -15,8 +15,7 @@ namespace tsSearch
 
         public string Publisher { get; set;}
 
-        public String Isbn { get; set; }
+        public string Isbn { get; set; }
 
-        public string BookUrl { get; set; }
     }                           
 }

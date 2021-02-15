@@ -222,5 +222,137 @@ namespace tsSearch
                     } 
          
          */
+
+
+        /*
+         * 
+                     string checknumber = "0";
+            string chTitle = "0";
+            string chAuhor = "0";
+            string chPublisher = "0";
+
+            if (MainWindow.sctitle != "") {
+                chTitle = "1";
+            }
+            if (MainWindow.scauthor != "") {
+                chAuhor = "1";
+            }
+            if (MainWindow.scpublisher != "") {
+                chPublisher = "1";
+            }
+            checknumber = chTitle + chAuhor + chPublisher;
+            if (Books.items != null) {
+                foreach (var item in Books.items) {
+                    if (item.volumeInfo.industryIdentifiers != null) {
+                        foreach (var i in item.volumeInfo.industryIdentifiers.FindAll(f => f.identifier.Length == 13)) {
+                            if (item.volumeInfo.authors != null) {
+                                switch (checknumber) {
+                                    //タイトルのみ
+                                    case "100":
+
+                                  //      if (item.volumeInfo.title.Contains(MainWindow.sctitle)) {
+                                            Url.Add(item.volumeInfo.infoLink);
+                                            datas.Add(new Data()
+                                            {
+                                                Title = item.volumeInfo.title,
+                                                Author = string.Join(",", item.volumeInfo.authors),
+                                                Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                Isbn = i.identifier ?? "リンク無し",
+                                            });
+                                      //  }
+                                        break;
+                                    //著者
+                                    case "010":
+                                        if (item.volumeInfo.authors != null) {
+                                            foreach (string au in item.volumeInfo.authors) {
+                                                if (MainWindow.scauthor == au) {
+                                                    Url.Add(item.volumeInfo.infoLink);
+                                                    datas.Add(new Data()
+                                                    {
+                                                        Title = item.volumeInfo.title,
+                                                        Author = string.Join(",", item.volumeInfo.authors),
+                                                        Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                        Isbn = i.identifier,
+                                                    });
+                                                }
+                                            }
+                                        }
+
+                                        break;
+                                    //出版社
+                                    case "001":                          
+                                        if (MainWindow.scpublisher == i.identifier) {
+                                            Url.Add(item.volumeInfo.infoLink);
+                                            datas.Add(new Data()
+                                            {
+                                                Title = item.volumeInfo.title,
+                                                Author = string.Join(",", item.volumeInfo.authors),
+                                                Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                Isbn = i.identifier,
+                                            });
+                                        }
+                                        
+                                        break;
+                                    //タイトル&著者
+                                    case "110":
+                                        if (item.volumeInfo.authors != null) {
+                                            foreach (string au in item.volumeInfo.authors) {
+                                                if (item.volumeInfo.title.Contains(MainWindow.sctitle) && MainWindow.scauthor == au) {
+                                                    Url.Add(item.volumeInfo.infoLink);
+                                                    datas.Add(new Data()
+                                                    {
+                                                        Title = item.volumeInfo.title,
+                                                        Author = string.Join(",", item.volumeInfo.authors),
+                                                        Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                                        Isbn = i.identifier,
+                                                    });
+                                                }
+                                            }
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        listView.ItemsSource = datas;
+                    }
+                }
+         */
+
+        /*
+         * 
+         * namespace tsSearch {
+    class DataList
+    {
+            
+        //コンストラクタ(データ入力)
+       // public void List() {
+           // var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
+            var consumerKey = "";
+            var api = new GoogleBooksAPI(consumerKey);
+            var Books = api.GetBooks();
+            if (Books.items != null) {
+                foreach (var item in Books.items) {  
+                    if (item.volumeInfo.authors != null) {
+                        foreach (string i in item.volumeInfo.authors) {
+
+                            DataWindow dataWindow = new DataWindow();
+                            //if (MainWindow.scauthor == i) 
+                                {
+                                Data data = new Data();
+                                data.Title = item.volumeInfo.title;
+                                data.Author = i;
+                                data.Publisher = item.volumeInfo.publisher;
+                                data.Isbn = null;
+                                data.BookUrl = null;
+                            }
+                        }
+                    }
+                }
+            }
+        }           
+    }
+}
+  */
+         
     }
 }

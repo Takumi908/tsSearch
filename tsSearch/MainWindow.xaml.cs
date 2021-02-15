@@ -41,9 +41,12 @@ namespace tsSearch
             sctitle = tbTitle.Text;
             scauthor = tbAuthor.Text;
             scpublisher = tbPublisher.Text;
+
             //値がすべて空の場合か項目が二つ以上入力されてる場合エラーボックスを表示
-            if ( sctitle != "" && scpublisher != "" || scauthor != "" && scpublisher != "" || sctitle != "" && scauthor != "" && scpublisher != "") {
-                MessageBox.Show("入力できる項目は1つです");
+            if (sctitle == "" && scauthor == "" && scpublisher == "") {
+                MessageBox.Show("項目が入力されていません");
+            } else if (sctitle != "" && scpublisher != "" || scauthor != "" && scpublisher != "") {
+                MessageBox.Show("ISBNは同時に検索することが出来ません");
             } else {
                 DataWindow dataWindow = new DataWindow();
                 dataWindow.ShowDialog();
