@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tsSearch"
         mc:Ignorable="d"
-        Title="検索結果" Height="500" Width="800"
+        Title="検索結果" Height="500" Width="830"
         ResizeMode="NoResize" Loaded="Window_Loaded" >
+
+
 
     <Grid>
         <Grid.Background>
@@ -25,18 +27,27 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <Button x:Name="edButton" Content="終了" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="edButton_Click"  Width="100" Height="50" Margin="20" FontSize="25" Background="#FFF09797" Foreground="White"/>
-        <ListView   ItemsSource="{Binding Path=datas}"  x:Name="listView"  Grid.ColumnSpan="4" Grid.RowSpan="4" Height="371" Margin="0"  VerticalAlignment="Top" Width="804" ItemContainerStyle="{DynamicResource CustomListViewItemStyle}">
+        <ListView   ItemsSource="{Binding Path=datas}"  AlternationCount="2" x:Name="listView"  Grid.ColumnSpan="4" Grid.RowSpan="4" Height="361" Margin="10,10,9.6,0"  VerticalAlignment="Top">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <!-- 奇数行だけ金色！ -->
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="Aquamarine" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
-                <GridView >
-                    <GridViewColumn Header="タイトル" Width="300" DisplayMemberBinding="{Binding Title}"  />
+                <GridView>
+
+                    <GridViewColumn  Header="タイトル" Width="300" DisplayMemberBinding="{Binding Title}"  />
                     <GridViewColumn Header="著者" Width="200" DisplayMemberBinding="{Binding Author}"/>
                     <GridViewColumn Header="出版社" Width="180" DisplayMemberBinding="{Binding Publisher}"/>
                     <GridViewColumn Header="ISBN" Width="120" DisplayMemberBinding="{Binding Isbn}"/>
                 </GridView>
             </ListView.View>
-            
         </ListView>
         <Button x:Name="ulButton" Content="詳細" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="20" Grid.Row="3"  Width="100" Height="50" Click="ulButton_Click"  FontSize="25"  Background="#FFF09797" Foreground="White"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="124,47,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

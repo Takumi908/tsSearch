@@ -26,14 +26,13 @@ using Binding = System.Windows.Data.Binding;
 using GridView = System.Windows.Controls.GridView;
 using ListView = System.Windows.Controls.ListView;
 using MessageBox = System.Windows.MessageBox;
+using View = System.Web.UI.WebControls.View;
 
-namespace tsSearch
-{
+namespace tsSearch {
     /// <summary>
     /// Window1.xaml の相互作用ロジック
     /// </summary>
-    public partial class DataWindow
-    {
+    public partial class DataWindow {
         public DataWindow() {
             InitializeComponent();
         }
@@ -76,7 +75,6 @@ namespace tsSearch
                                     Isbn = "コード不明",
                                 });
                                 listView.ItemsSource = datas;
-                              
                             }
                         }
                     }
@@ -94,17 +92,6 @@ namespace tsSearch
                 System.Diagnostics.Process.Start(Url[Index]);
             } else {
                 MessageBox.Show("選択されていません");
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e) {
-           // listView.View = View.Details;
-           // listView.Columns.Add("番号", 300, HorizontalAlignment.Left);
-            for (int i = 0; i < 100; i++) {
-                listView.Items.Add(i.ToString());
-                if ((i % 2) == 0) {
-                    listView.Items[i].BackColor = Color.Aqua;
-                }
             }
         }
     }
