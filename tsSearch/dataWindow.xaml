@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:tsSearch"
         mc:Ignorable="d"
         Title="検索結果" Height="500" Width="800"
-        ResizeMode="NoResize" Loaded="Window_Loaded">
+        ResizeMode="NoResize" Loaded="Window_Loaded" >
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="image5.jpg"/>
@@ -24,7 +25,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <Button x:Name="edButton" Content="終了" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="edButton_Click"  Width="100" Height="50" Margin="20" FontSize="25" Background="#FFF09797" Foreground="White"/>
-        <ListView     x:Name="listView"  Grid.ColumnSpan="4" Grid.RowSpan="4" Height="371" Margin="0"  VerticalAlignment="Top" Width="804">
+        <ListView   ItemsSource="{Binding Path=datas}"  x:Name="listView"  Grid.ColumnSpan="4" Grid.RowSpan="4" Height="371" Margin="0"  VerticalAlignment="Top" Width="804" ItemContainerStyle="{DynamicResource CustomListViewItemStyle}">
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="タイトル" Width="300" DisplayMemberBinding="{Binding Title}"  />
@@ -33,7 +34,9 @@
                     <GridViewColumn Header="ISBN" Width="120" DisplayMemberBinding="{Binding Isbn}"/>
                 </GridView>
             </ListView.View>
+            
         </ListView>
         <Button x:Name="ulButton" Content="詳細" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="20" Grid.Row="3"  Width="100" Height="50" Click="ulButton_Click"  FontSize="25"  Background="#FFF09797" Foreground="White"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="124,47,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

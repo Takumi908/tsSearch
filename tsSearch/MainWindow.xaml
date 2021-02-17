@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tsSearch"
         mc:Ignorable="d"
-        Title="本検索システム" Height="500" Width="750"
-        
-        ResizeMode="NoResize">
+        Title="本検索システム" Height="500" Width="750" ResizeMode="NoResize">
 
 
 
@@ -43,5 +41,6 @@
         <Label Content="～GoogleBooksAPIを使いライブラリから本を検索～" FontSize="15" Grid.Column="1" HorizontalAlignment="Center" Margin="10,65,0,0" VerticalAlignment="Top" Height="29" Grid.ColumnSpan="2" Width="350" Foreground="#FF1F8D5B"/>
 
     </Grid>
-
 </Window>
+
+

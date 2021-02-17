@@ -28,7 +28,7 @@
         <TextBlock x:Name="tbhelp" Grid.ColumnSpan="4" Grid.RowSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Auto"  FontSize="25" Foreground="#FF1F8D5B" Grid.Row="1"/>
         <TextBlock x:Name="tbHelpTitle2" Grid.ColumnSpan="4"  FontSize="25" Foreground="#FFFF8080" Grid.Row="3"/>
         <TextBlock x:Name="tbhelp2" Grid.ColumnSpan="4"  FontSize="25" Foreground="#FF1F8D5B" Grid.Row="4"/>
-        <Button x:Name="btEnd" Content="閉じる" Click="Button_Click"  Grid.Row="5" Grid.Column="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,15,23,15" Width="90" Foreground="#FFFF8080" Background="#FF5AD3EE"/>
+        <Button x:Name="btEnd" Content="閉じる" Click="Button_Click"  Grid.Row="5" Grid.Column="3" FontSize="25" Margin="10" Width="100" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="#FFF09797" Foreground="White" Height="40"/>
 
     </Grid>
 </Window>

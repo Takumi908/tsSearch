@@ -32,7 +32,8 @@ namespace tsSearch
     /// <summary>
     /// Window1.xaml の相互作用ロジック
     /// </summary>
-    public partial class DataWindow {
+    public partial class DataWindow
+    {
         public DataWindow() {
             InitializeComponent();
         }
@@ -45,7 +46,7 @@ namespace tsSearch
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            // listView.AltenatingRowBackground = System.Windows.Media.Brushes.PaleTurquoise;
+            //listView.AltenatingRowBackground = System.Windows.Media.Brushes.PaleTurquoise;
 
             //var consumerKey = "";
             var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
@@ -55,25 +56,36 @@ namespace tsSearch
 
             if (Books.items != null) {
                 foreach (var item in Books.items) {
-                    //if (item.volumeInfo.industryIdentifiers != null) {
-                    //  foreach (var i in item.volumeInfo.industryIdentifiers.FindAll(f => f.identifier.Length == 13)) {
                     if (item.volumeInfo.authors != null) {
-                        Url.Add(item.volumeInfo.infoLink);
-                        datas.Add(new Data() {
-                            Title = item.volumeInfo.title,
-                            Author = string.Join(",", item.volumeInfo.authors),
-                            Publisher = item.volumeInfo.publisher ?? "出版社不明",
-                            Isbn = item.volumeInfo.identifier ?? "コード不明",
-                        });
-                        listView.ItemsSource = datas;
+                        foreach (var i in item.volumeInfo.industryIdentifiers.FindAll(f => f.identifier.Length == 13)) {
+                            if (i.identifier.Length == 13) {
+                                Url.Add(item.volumeInfo.infoLink);
+                                datas.Add(new Data() {
+                                    Title = item.volumeInfo.title,
+                                    Author = string.Join(",", item.volumeInfo.authors),
+                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                    Isbn = i.identifier,
+                                });
+                                listView.ItemsSource = datas;
+                            } else {
+                                Url.Add(item.volumeInfo.infoLink);
+                                datas.Add(new Data() {
+                                    Title = item.volumeInfo.title,
+                                    Author = string.Join(",", item.volumeInfo.authors),
+                                    Publisher = item.volumeInfo.publisher ?? "出版社不明",
+                                    Isbn = "コード不明",
+                                });
+                                listView.ItemsSource = datas;
+                              
+                            }
+                        }
                     }
-                    //}
-                    //}
                 }
-            }
-            if (listView.Items.Count == 0) {
-                MessageBox.Show("該当する書籍が見つかりませんでした");
-                this.Close();
+            } else {
+                if (listView.Items.Count == 0) {
+                    MessageBox.Show("該当する書籍が見つかりませんでした");
+                    this.Close();
+                }
             }
         }
         private void ulButton_Click(object sender, RoutedEventArgs e) {
@@ -84,11 +96,16 @@ namespace tsSearch
                 MessageBox.Show("選択されていません");
             }
         }
-        public void ListViewSortingSample() {
-            InitializeComponent();
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
-            view.SortDescriptions.Add(new SortDescription("Title", ListSortDirection.Ascending));
-            }
-    }
 
+        private void Button_Click(object sender, RoutedEventArgs e) {
+           // listView.View = View.Details;
+           // listView.Columns.Add("番号", 300, HorizontalAlignment.Left);
+            for (int i = 0; i < 100; i++) {
+                listView.Items.Add(i.ToString());
+                if ((i % 2) == 0) {
+                    listView.Items[i].BackColor = Color.Aqua;
+                }
+            }
+        }
+    }
 }
