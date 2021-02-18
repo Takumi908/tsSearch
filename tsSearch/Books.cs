@@ -54,6 +54,7 @@ namespace tsSearch
             public string infoLink { get; set; }
             public string canonicalVolumeLink { get; set; }
             public List<IndustryIdentifier> industryIdentifiers { get; set; }
+            //例外エラー発生するので除外
           //  public int? averageRating { get; set; }
             public int? ratingsCount { get; set; }
             public string subtitle { get; set; }

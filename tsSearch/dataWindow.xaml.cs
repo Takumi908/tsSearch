@@ -39,24 +39,26 @@ namespace tsSearch {
 
         List<string> Url = new List<string>();
 
-
+        //終了
         private void edButton_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
 
+        //メイン画面の検索ボタン押したときに実行
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            //listView.AltenatingRowBackground = System.Windows.Media.Brushes.PaleTurquoise;
 
-            //var consumerKey = "";
             var consumerKey = "AIzaSyBj1ahxU2BSwc0b7W_PEeQo_L7jszxuIPY";
             var api = new GoogleBooksAPI(consumerKey);
             var Books = api.GetBooks();
             var datas = new ObservableCollection<Data>();
 
+            
             if (Books.items != null) {
                 foreach (var item in Books.items) {
+                    //著者が存在しているか
                     if (item.volumeInfo.authors != null) {
                         foreach (var i in item.volumeInfo.industryIdentifiers.FindAll(f => f.identifier.Length == 13)) {
+                            //ISBNコードが13桁のものを取得
                             if (i.identifier.Length == 13) {
                                 Url.Add(item.volumeInfo.infoLink);
                                 datas.Add(new Data() {
@@ -66,6 +68,7 @@ namespace tsSearch {
                                     Isbn = i.identifier,
                                 });
                                 listView.ItemsSource = datas;
+                            //取得出来ない場合コード不明で出力
                             } else {
                                 Url.Add(item.volumeInfo.infoLink);
                                 datas.Add(new Data() {
@@ -79,6 +82,7 @@ namespace tsSearch {
                         }
                     }
                 }
+                //書籍が見つからない場合、ダイアログを表示し検索画面に戻る
             } else {
                 if (listView.Items.Count == 0) {
                     MessageBox.Show("該当する書籍が見つかりませんでした");
@@ -86,8 +90,10 @@ namespace tsSearch {
                 }
             }
         }
+        //詳細ボタン
         private void ulButton_Click(object sender, RoutedEventArgs e) {
             int Index = listView.SelectedIndex;
+            //GoogleBooksライブラリのページへ移動
             if (Index >= 0) {
                 System.Diagnostics.Process.Start(Url[Index]);
             } else {

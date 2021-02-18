@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="本検索システム" Height="500" Width="750" ResizeMode="NoResize">
 
-
-
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="image5.jpg"/>
@@ -33,7 +31,7 @@
         <TextBlock HorizontalAlignment="Right"  Grid.Row="3"  Text="ISBN" VerticalAlignment="Center"  Margin="30" FontSize="35" Foreground="#FF1F8D5B"/>
         <TextBox x:Name="tbTitle"  Grid.Column="1" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Margin="25" Grid.Row="1" FontSize="25" Foreground="Black"  />
         <TextBox x:Name="tbAuthor" Grid.Column="1" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Margin="25" Grid.Row="2" FontSize="25"/>
-        <TextBox x:Name="tbPublisher" Grid.Column="1"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Margin="25" Grid.Row="3" FontSize="25">
+        <TextBox x:Name="tbIsbn" Grid.Column="1"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Margin="25" Grid.Row="3" FontSize="25">
         </TextBox>
         <Button x:Name="btSearch" Content="検索" Grid.Column="3" Grid.Row="4" Height="50" Click="btSearch_Click" FontSize="25" Margin="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="#FFF09797" Foreground="White"/>
         <Button x:Name="btConfig" Content="ヘルプ" Grid.Column="0" Grid.Row="4" Height="50" Click="btConfig_Click" FontSize="25" Margin="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Background="#FFF09797" Foreground="White"  />

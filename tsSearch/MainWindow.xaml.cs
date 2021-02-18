@@ -31,21 +31,19 @@ namespace tsSearch
         }
         public static string sctitle;
         public static string scauthor;
-        public static string scpublisher;
-        public static string scurl;
-                                                
+        public static string scisbn;                                               
 
         //検索ボタン押したときに実行
         private void btSearch_Click(object sender, RoutedEventArgs e) {
 
             sctitle = tbTitle.Text;
             scauthor = tbAuthor.Text;
-            scpublisher = tbPublisher.Text;
+            scisbn = tbIsbn.Text;
 
             //値がすべて空の場合か項目が二つ以上入力されてる場合エラーボックスを表示
-            if (sctitle == "" && scauthor == "" && scpublisher == "") {
+            if (sctitle == "" && scauthor == "" && scisbn == "") {
                 MessageBox.Show("項目が入力されていません");
-            } else if (sctitle != "" && scpublisher != "" || scauthor != "" && scpublisher != "") {
+            } else if (sctitle != "" && scisbn != "" || scauthor != "" && scisbn != "") {
                 MessageBox.Show("ISBNは同時に検索することが出来ません");
             } else {
                 DataWindow dataWindow = new DataWindow();

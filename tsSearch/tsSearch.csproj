@@ -73,17 +73,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Books.cs" />
-    <Compile Include="BooksData.cs" />
     <Compile Include="ConfigWindow.xaml.cs">
       <DependentUpon>ConfigWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="GoogleBooksAPI.cs" />
-    <Compile Include="Sample.cs" />
     <Compile Include="DataWindow.xaml.cs">
       <DependentUpon>DataWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewSort.cs" />
     <Page Include="ConfigWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
